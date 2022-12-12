@@ -1,0 +1,35 @@
+<meta charset="UTF-8">
+
+<body>
+
+    <h2>Fase 2 - Javascript e HTML - Lógica de programação 1 - Pratique resolvendo problemas do seu dia a dia - Retorno de funções</h2>
+
+    <h3>De acordo com a OMS, diz-se que o indivíduo tem peso normal quando o resultado do IMC está entre 18,5 e 24,9. O cáuculo do IMC é calculado dividindo o peso (em kg) pela altura ao quadrado (em metros).</h3>
+
+        <script>
+
+            function pulaLinha() {
+                document.write("<br><br>");
+            }
+
+            function mostra(frase) {
+                document.write(frase);
+                pulaLinha();
+            }
+
+            function calculaImc(peso, altura) {
+
+                var imc = peso / (altura * altura);
+                imc = Math.round(imc);
+                return imc;
+
+            }
+
+            var imcFlavio = calculaImc(73, 1.71);
+            var imcVanessa = calculaImc(63, 1.72);
+
+            mostra("O IMC calculado de Flávio é " + (imcFlavio) + " e o IMC calculado de Vanessa é " + (imcVanessa) + ".");
+
+        </script>
+
+</body>
