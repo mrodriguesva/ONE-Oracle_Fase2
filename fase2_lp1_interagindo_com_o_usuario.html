@@ -1,0 +1,34 @@
+<meta charset="UTF-8">
+
+<body>
+
+    <h2>Fase 2 - Javascript e HTML - Lógica de programação 1 - Pratique resolvendo problemas do seu dia a dia - Interagindo com o usuário</h2>
+
+        <script>
+
+            function pulaLinha() {
+                document.write("<br><br>");
+            }
+
+            function mostra(frase) {
+                document.write(frase);
+                pulaLinha();
+            }
+
+            function calculaImc(altura, peso) {
+
+                return peso / (altura * altura);
+            }
+
+            var nomeInformado = prompt("Informe o seu nome: ");
+            var alturaInformada = prompt(nomeInformado + ", informe a sua altura: ");
+            var pesoInformado = prompt(nomeInformado + ", informe o seu peso: ");
+
+            var imc = calculaImc(alturaInformada, pesoInformado);
+            imc = Math.round(imc);
+
+            mostra (nomeInformado + ", o seu IMC calculado é " + imc + ".");
+
+        </script>
+
+</body>
