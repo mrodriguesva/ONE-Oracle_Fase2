@@ -4,8 +4,6 @@
 
     <h2>Fase 2 - Javascript e HTML - Lógica de programação 1 - Pratique resolvendo problemas do seu dia a dia - Retorno de funções</h2>
 
-    <h3>De acordo com a OMS, diz-se que o indivíduo tem peso normal quando o resultado do IMC está entre 18,5 e 24,9. O cáuculo do IMC é calculado dividindo o peso (em kg) pela altura ao quadrado (em metros).</h3>
-
         <script>
 
             function pulaLinha() {
@@ -17,18 +15,20 @@
                 pulaLinha();
             }
 
-            function calculaImc(peso, altura) {
+            function calculaImc(altura, peso) {
 
-                var imc = peso / (altura * altura);
+                return peso / (altura * altura);
                 imc = Math.round(imc);
                 return imc;
-
             }
 
-            var imcFlavio = calculaImc(73, 1.71);
-            var imcVanessa = calculaImc(63, 1.72);
+            var imcFlavio = calculaImc(1.71, 73);
+            var imcAmigo = calculaImc(1.72, 68);
+            var totalImc = imcFlavio + imcAmigo;
 
-            mostra("O IMC calculado de Flávio é " + (imcFlavio) + " e o IMC calculado de Vanessa é " + (imcVanessa) + ".");
+            //var totalImc = calculaImc(1.71, 73) + calculaImc(1.72, 68); // substituídas as variáveis Flavio e amigo diretamente pelo valor.
+
+            document.write("A soma dos imc's é " + totalImc);
 
         </script>
 
