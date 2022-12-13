@@ -1,0 +1,27 @@
+<meta charset="UTF-8">
+
+<body>
+
+    <h2>Fase 2 - Javascript e HTML - Lógica de programação 1 - Execute códigos diferentes dependendo da condição - Convertendo texto em números</h2>
+
+        <script>
+
+            function pulaLinha() {
+                document.write("<br><br>");
+            }
+
+            function mostra(frase) {
+                document.write(frase);
+                pulaLinha();
+            }
+
+            var vitorias = parseInt(prompt("Entre com o número de vitórias: "));
+            var empates = parseInt(prompt("Entre com o número de empates: "));
+
+            var pontos = vitorias * 3 + empates;
+
+            mostra ("Os pontos do seu time é " + pontos + ".")
+
+        </script>
+
+</body>
