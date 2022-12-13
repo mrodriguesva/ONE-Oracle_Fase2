@@ -1,0 +1,58 @@
+<meta charset="UTF-8">
+
+<body>
+
+    <h2>Fase 2 - Javascript e HTML - Lógica de programação 1 - Execute códigos diferentes dependendo da condição - Melhorando programa de IMC</h2>
+
+        <script>
+
+            function pulaLinha() {
+                document.write("<br><br>");
+            }
+
+            function mostra(frase) {
+                document.write(frase);
+                pulaLinha();
+            }
+
+            function calculaImc(altura, peso) {
+
+                return peso / (altura * altura);
+            }
+
+            var nomeInformado = prompt("Informe o seu nome: ");
+            var alturaInformada = prompt(nomeInformado + ", informe a sua altura: ");
+            var pesoInformado = prompt(nomeInformado + ", informe o seu peso: ");
+
+            // Até o momento, a Organização Mundial da Saúde definiu os seguintes parâmetros para o IMC:
+            // Se IMC < 18.5, sua avaliação é que você está abaixo do peso.
+            // Se IMC > 35, sua avaliação é que você está acima do peso.
+            // Se IMC >= 18.5 e <= 35, sua avaliação é que você está na média do peso.
+
+            var imc = calculaImc(alturaInformada, pesoInformado);
+            //imc = Math.round(imc); - Nesse caso não é adequado usar o arredondamento para que o resultado não seja falso negativo ou falso positivo.
+
+            mostra (nomeInformado + ", o seu IMC calculado é " + imc + ".");
+
+            if (imc < 18.5) {
+                mostra ("Seu IMC está abaixo do recomendado pela OMS, considerado não saudável.");
+            }
+
+            //if (imc >= 18.5) {
+                //if(imc <=35) {
+                //mostra ("Seu IMC está de acordo com o recomendado pela OMS, considerado saudável.");
+                //}
+            //}
+
+            //Reescrevendo de forma menos "verbosa" no JS usando "&&" que significa "e"
+            if (imc >= 18.5 && imc <=35) {
+                mostra ("Seu IMC está de acordo com o recomendado pela OMS, considerado saudável.");
+            }
+
+            if (imc > 35) {
+                mostra ("Seu IMC está acima do recomendado pela OMS, considerado não saudável.");
+            }
+
+        </script>
+
+</body>
