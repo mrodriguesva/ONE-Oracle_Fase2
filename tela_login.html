@@ -1,0 +1,47 @@
+<meta charset="UTF-8">
+<body>
+    <h2>Fase 2 - Javascript e HTML - Lógica de programação 1 - Repita tarefas - Simulando uma tela de login</h2>
+        <script>
+
+            function pulaLinha() {
+                document.write("<br><br>");
+            }
+
+            function mostra(frase) {
+                document.write(frase);
+                pulaLinha();
+            }
+
+            var loginCadastrado = "alura";
+            var senhaCadastrada = "alura321";
+
+            var maximoTentativas = 3;
+            var tentativaAtual = 1;
+
+            while(tentativaAtual <= maximoTentativas) {
+                var loginInformado = prompt("Informe seu login:");
+                var senhaInformada = prompt("Informe sua senha:");
+
+                if(loginCadastrado == loginInformado && senhaCadastrada == senhaInformada) {
+                    alert("Bem-vindo ao sistema " + loginInformado + ".");
+                    mostra("Bem-vindo ao sistema " + loginInformado + ".");
+                    tentativaAtual = maximoTentativas;
+                }
+                else if (tentativaAtual == 1) {
+                    alert("Atenção! Login inválido! Tente novamente! Restam 2 tentativas!");
+                }
+                else if (tentativaAtual == 2) {
+                    alert("Atenção! Login inválido! Tente novamente! Resta 1 tentativa!");
+                }
+                else if (tentativaAtual == 3) {
+                    alert("Atenção! Login inválido! Número máximo permitido de tentativas ultrapassado! Contate o administrador do sistema!");
+                    mostra("Atenção! Login inválido!");
+                    mostra("Número máximo permitido de tentativas ultrapassado!");
+                    mostra("Contate o administrador do sistema!");
+                }
+
+                tentativaAtual++;
+            }
+
+        </script>
+</body>
