@@ -1,0 +1,26 @@
+<meta charset="UTF-8">
+<body>
+    <h2>Fase 2 - Javascript e HTML - Lógica de programação 1 - Repita tarefas - Repetir enquanto… - Ano Copa</h2>
+        <script>
+
+            function pulaLinha() {
+                document.write("<br><br>");
+            }
+
+            function mostra(frase) {
+                document.write(frase);
+                pulaLinha();
+            }
+
+            var anoPrimeiraCopa = 1930;
+            var anoAtual = parseInt(prompt("Entre com o ano atual."));
+
+            while (anoPrimeiraCopa <= anoAtual) {                
+                mostra("Teve Copa em " + anoPrimeiraCopa + ".");
+                anoPrimeiraCopa = anoPrimeiraCopa + 4;
+            }
+
+            mostra("FIM!");
+
+        </script>
+</body>
