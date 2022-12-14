@@ -1,0 +1,45 @@
+<meta charset="UTF-8">
+
+<body>
+
+    <h2>Fase 2 - Javascript e HTML - Lógica de programação 1 - Repita tarefas - Interrompendo uma repetição</h2>
+  
+      <script>
+
+            function pulaLinha() {
+                document.write("<br><br>");
+            }
+
+            function mostra(frase) {
+                document.write(frase);
+                pulaLinha();
+            }
+
+            var numeroPensado = Math.round(Math.random() * 10);
+            //console.log(numeroPensado); //serve para verificar o número que está sendo gerado, através do console do navegador
+
+
+            /*Atenção: com atualizações, o Google Chrome agora só mostra as mensagens através de document.write() realizadas dentro de um loop, somente quando a página for carregada completamente, isto é, quando o loop termina. Neste caso, para efeito de aprendizagem, utilizem alert() no lugar de document.write().*/
+
+            var tentativas = 1;
+
+            while(tentativas <= 3) {
+
+                var chute = parseInt(prompt("Já pensei em um número! Qual você acha que é?!?"));
+
+                if (chute == numeroPensado) {
+                    //alert("Uau!!! Você acertou, pois eu pensei no número " + numeroPensado + "!");
+                    mostra("Uau!!! Você acertou, pois eu pensei no número " + numeroPensado + "!");
+                    break;
+                } else {
+                    //alert("Ah, que pena! Você errou! Mas tente novamente!");
+                    mostra("Ah, que pena! Você errou! Mas tente novamente!");
+                }
+                tentativas++;
+            }
+
+            mostra("FIM!");
+
+        </script>
+
+</body>
