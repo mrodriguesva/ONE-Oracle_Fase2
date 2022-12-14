@@ -1,0 +1,41 @@
+<meta charset="UTF-8">
+
+<body>
+
+    <h2>Fase 2 - Javascript e HTML - Lógica de programação 1 - Repita tarefas - A organizadora de eventos e seu irmão prodígio</h2>
+
+        <script>
+
+            function pulaLinha() {
+                document.write("<br><br>");
+            }
+
+            function mostra(frase) {
+                document.write(frase);
+                pulaLinha();
+            }
+
+            var mesAnoAtual = prompt("Informe o mês e o ano atuais, no formato MM/AAAA.");
+
+            var totalDeEventos = parseInt(prompt("Informe o total de eventos ocorridos em " + mesAnoAtual + "."));
+
+            var contador = 1;
+
+            var totalGastoComEventos = 0;
+
+            while(contador <= totalDeEventos) {
+
+                var gasto = parseFloat(prompt("Informe o total de gastos ocorridos com o evento."));
+
+                totalGastoComEventos = totalGastoComEventos + gasto;
+
+                contador++;
+            }
+
+            var media = Math.round(totalGastoComEventos / totalDeEventos);
+
+            mostra("A média dos gastos ocorrida em " + mesAnoAtual + " foi de R$" + media + ",00.");
+
+        </script>
+
+</body>
