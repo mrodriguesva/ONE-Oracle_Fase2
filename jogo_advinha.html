@@ -1,0 +1,55 @@
+<meta charset="UTF-8">
+<body>
+    <h2>Fase 2 - Javascript e HTML - Lógica de programação 1 - Execute códigos diferentes dependendo da condição - Jogo de adivinhação</h2>
+        
+        <!--<h3>Exercício 1 - Utilizando um número fixado no código</h3>-->
+        <!--<script>
+
+            /*function pulaLinha() {
+                document.write("<br><br>");
+            }
+
+            function mostra(frase) {
+                document.write(frase);
+                pulaLinha();
+            }
+
+            var numeroPensado = 5;
+
+            var chute = parseInt(prompt("Digite seu chute!"));
+
+            if (chute == numeroPensado) {
+                mostra("Você acertou!");
+            } else {
+                mostra("Você errou! O número pensado foi " + numeroPensado + ".");
+            }*/
+
+        </script>-->
+
+        <h3>Exercício 2 - Utilizando um número gerado aleatoriamente</h3>
+        <script>
+
+            function pulaLinha() {
+                document.write("<br><br>");
+            }
+
+            function mostra(frase) {
+                document.write(frase);
+                pulaLinha();
+            }
+
+            // multiplicando por 10, gera um número de 1 a 10; para gerar um número de 1 a 100 multiplique por 100 e assim por diante
+            var numeroPensado = Math.round(Math.random() * 10);
+            //console.log(numeroPensado); serve para verificar o número que está sendo gerado, através do console do navegador
+
+            var chute = parseInt(prompt("Digite seu chute!"));
+
+            if (chute == numeroPensado) {
+                mostra("Você acertou!");
+            } else {
+                mostra("Você errou! O número pensado foi " + numeroPensado + ".");
+            }
+
+        </script>
+
+</body>
