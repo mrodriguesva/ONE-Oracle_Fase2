@@ -1,0 +1,45 @@
+<meta charset="UTF-8">
+
+<body>
+
+    <h2>Fase 2 - Javascript e HTML - Lógica de programação 1 - Repita tarefas - Outra forma de repetir - <u>Utilizando o for no lugar do while</u></h2>
+
+    <h3>Exercício 1 - Tabuada do 7 - Demonstrando com <u>while</u></h3>
+
+        <script>
+
+            function pulaLinha() {
+                document.write("<br><br>");
+            }
+
+            function mostra(frase) {
+                document.write(frase);
+                pulaLinha();
+            }
+
+            var multiplicador = 1;
+
+            while(multiplicador <= 10) {
+
+                mostra("7 x 1 = " + 7 * multiplicador + ".");
+                multiplicador++;
+            }
+
+            mostra("FIM!");
+
+        </script>
+
+    <h3>Exercício 2 - Tabuada do 7 - Demonstrando com <u>for</u></h3>
+
+        <script>
+    
+            for(var multiplicador = 1; multiplicador <= 10; multiplicador++) {
+
+                mostra("7 x 1 = " + 7 * multiplicador + ".");
+            }
+
+            mostra("FIM!");
+
+        </script>
+
+</body>
