@@ -1,0 +1,52 @@
+<meta charset="UTF-8">
+<body>
+    <h2>Fase 2 - Javascript e HTML - Lógica de programação 1 - Execute códigos diferentes dependendo da condição - Consolidando seu conhecimento 1 - Função Sorteia</h2>
+  
+      <script>
+
+            function pulaLinha() {
+                document.write("<br><br>");
+            }
+
+            function mostra(frase) {
+                document.write(frase);
+                pulaLinha();
+            }
+
+            function sorteia(n) {
+                //Verificando qual número estava sendo gerado para testar o script
+                /*
+                var log  = Math.round(Math.random() * n);
+                console.log(log);
+                return log;
+                */
+                return Math.round(Math.random() * n);
+            }
+
+            var numeroPensado = sorteia(10);
+
+            var chute = parseInt(prompt("Já pensei em um número! Qual você acha que é?!?"));
+
+            //Tipo 1 de sorteio
+            /*
+            if (chute == numeroPensado) {
+                mostra("Uau!!! Você acertou, pois eu pensei no número " + numeroPensado + "!");
+            } else {
+                mostra("Ah, que pena! Você errou! Eu tinha pensado no número " + numeroPensado + "! Mas tente novamente!");
+            }
+            */
+
+            //Tipo 2 de sorteio
+            if (chute == numeroPensado) {
+                mostra("Uau!!! Você <b>acertou</b>, pois eu pensei no número <b>" + numeroPensado + "</b>!");
+            } else {
+                if(chute > numeroPensado) {
+                    mostra("Ah, que pena! Você <b>errou!</b> Seu chute é <b>maior</b> que o número pensado! Mas tente novamente!");
+                } else {
+                    mostra("Ah, que pena! Você <b>errou!</b> Seu chute é <b>menor</b> que o número pensado! Mas tente novamente!");
+                }
+            }
+
+        </script>
+
+</body>
