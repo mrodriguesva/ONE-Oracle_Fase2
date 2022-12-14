@@ -1,0 +1,55 @@
+<meta charset="UTF-8">
+
+<body>
+
+    <h2>Fase 2 - Javascript e HTML - Lógica de programação 1 - Trabalhe com muitos dados - Armazenando muitos dados</h2>
+
+        <input/>
+        <button>Adivinhe o número! Dica: Entre 0 e 10!</button>
+
+        <script>
+
+            /*Criação de um array.
+            Na boa prática de programação, o nome de um array deve estar no plural.
+            Importante lembrar que no JS o array inicia na posição 0.*/
+            var segredos = [2,3,5,7,10]; //Temos 5 posições no array, ou seja, posições 0, 1, 2 e 3, visto que inicia em 0.
+
+            var input = document.querySelector("input"); //traz o conteúdo da tag input (HTML) para dentro da var input (JS)
+            input.focus(); // deixa a caixa de texto em foco, com moldura mais marcada
+
+            function verifica() {
+
+                //Alternativa criada para não ficar recebendo "Você errou" mesmo após acertar, dentro ou fora do for.
+                var achou = false;
+
+                //Lembrando que o primeiro espaço é a declaração da variável a ser utilizada no for, o segundo espaço é a condição de parada e a terceira posição é o incremento.
+                //Deixamos a condição de parada < 5, visto que o array tem 5 posições. Lembrando que sempre que acrescentar um número ao array, é necessário atualizar a condição de parada.
+                //for(var posicao = 0; posicao < 5 ; posicao++) { 
+                //Podemos substituir a condição de parada fixa no código, como acima, pela forma abaixo.
+                // O .length de um array retorna a quantidade de elementos que ele tem.
+                for(var posicao = 0; posicao < segredos.length; posicao++) { 
+
+                    if(input.value == segredos[posicao]) { //input.value == segredo pega o valor atribuído à var input no passo anterior
+                        alert("Você acertou!");
+                        achou = true;
+                        break;
+                    } //else {
+                        //alert("Você errou!");
+                    //}
+                }
+
+                if(achou == false) {
+                    alert("Você errou!");
+                }
+                
+                input.value = ""; // limpa o conteúdo digitado no campo input
+                input.focus();
+            }
+
+            var button = document.querySelector("button"); //traz o conteúdo da tag button (HTML) para dentro da var button (JS)
+
+            button.onclick = verifica; //função verifica sem os parênteses, pois não queremos executar a função e sim "fazer ela ficar dentro do clique do botão"); button.onclick = verifica pega a função atribuída à verifica, ou seja o conteúdo da função está sendo "copiado" para dentro do clique do botão e será executada ao clicar o botão;
+
+        </script>
+
+</body>
