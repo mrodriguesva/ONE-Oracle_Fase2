@@ -1,0 +1,34 @@
+<meta charset="UTF-8">
+
+<body>
+
+    <h2>Fase 2 - Javascript e HTML - Lógica de programação 1 - Interaja de maneira diferente com o usuário - Melhorando a usabilidade</h2>
+
+        <input/>
+        <button>Adivinhe o número! Dica: Entre 0 e 10!</button>
+
+        <script>
+
+            var input = document.querySelector("input"); //traz o conteúdo da tag input (HTML) para dentro da var input (JS)
+            input.focus(); // deixa a caixa de texto em foco, com moldura mais marcada
+
+            var segredo = Math.round(Math.random() * 10);
+            //console.log(segredo);
+
+            function verifica() {
+                if(input.value == segredo) { //input.value == segredo pega o valor atribuído à var input no passo anterior
+                    alert("Você acertou!");
+                } else {
+                    alert("Você errou!");
+                }
+                input.value = ""; // limpa o conteúdo digitado no campo input
+                input.focus();
+            }
+
+            var button = document.querySelector("button"); //traz o conteúdo da tag button (HTML) para dentro da var button (JS)
+
+            button.onclick = verifica; //função verifica sem os parênteses, pois não queremos executar a função e sim "fazer ela ficar dentro do clique do botão"); button.onclick = verifica pega a função atribuída à verifica, ou seja o conteúdo da função está sendo "copiado" para dentro do clique do botão e será executada ao clicar o botão;
+
+        </script>
+
+</body>
