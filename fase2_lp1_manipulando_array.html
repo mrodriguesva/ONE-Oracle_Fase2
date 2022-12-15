@@ -1,0 +1,100 @@
+<meta charset="UTF-8">
+
+<body>
+
+    <h2>Fase 2 - Javascript e HTML - Lógica de programação 1 - Trabalhe com muitos dados - Manipulando array</h2>
+
+        <input/>
+        <button>Adivinhe o número! Dica: Entre 1 e 10!</button>
+
+        <script>
+
+            //Sorteia, aleatoriamente, 1 número ente 0 e 10.
+            function sorteia(){
+                return Math.round(Math.random() * 10);
+            }
+
+            //Sorteia a quantidade de números passada pela chamada da função abaixo.
+            function sorteiaNumeros(quantidade) {
+
+                //A variável segredos, criada dentro dentro desta função, não tem a ver com a variável segredos existente fora desta função. O nome não importa, *desde que não haja return para captura do resultado fora desta função*.
+                //Ao ser chamada, a função sorteiaNumeros declara uma lista vazia (array segredos).
+                var segredos = [];
+
+                //Contador p/ verificação da qtd máxima de números a serem gerados, de acordo com o passado pela chamada de sorteiaNumeros.
+                var nContador = 1;
+
+                //Artifício criado para não deixar gerar números repetidos.
+                while(nContador <= quantidade) {
+
+                    //Variável criada para receber o número sorteado.
+                    var nSorteado = sorteia();
+
+                    //Variável criada para verificar se o número sorteado já existe, sendo iniciada com false.
+                    var jaSorteado = false;
+
+                    //Condição criada pois não se quer que o número 0 exista no array.
+                    if(nSorteado !== 0) {
+
+                        //Percorre o array verificando se o número sorteado já existe.
+                        for(var posicao = 0; posicao < segredos.length; posicao++) {
+
+                            //Se o número sorteado já existir no array, ocorre break, saindo do if e do for.
+                            if(segredos[posicao] == nSorteado) {
+                                jaSorteado = true;
+                                break;
+                            }
+                        }
+
+                        //Tendo passado pelo bloco acima, o número ainda não existe no array e pode ser gravado no mesmo.
+                        if (jaSorteado == false) {
+                            segredos.push(nSorteado);
+                            nContador++;
+                        }  
+                    }                  
+                }
+
+                //Retorna um array de x números (de acordo com o chamado por sorteiaNumeros) para a variável segredos abaixo.
+                return segredos;
+            }
+
+            //Chama a função sorteiaNumeros, passando quantos números devem ser sorteados, e guardando o retorno na variável segredos.
+            var segredos = sorteiaNumeros(3);
+
+            //Ajuda o desenvolvedor a acompanhar o log pelo Console do navegador.
+            console.log(segredos);
+
+            //Traz o conteúdo da tag input (HTML) para dentro da var input (JS)
+            var input = document.querySelector("input");
+            input.focus();
+
+            //Verifica se o usuário acertou ou errou o número.
+            function verifica() {
+
+                var achou = false;
+
+                for(var posicao = 0; posicao < segredos.length; posicao++) { 
+
+                    if(input.value == segredos[posicao]) {
+                        alert("Você acertou!");
+                        achou = true;
+                        break;
+                    }
+                }
+
+                if(achou == false) {
+                    alert("Você errou!");
+                }
+                
+                input.value = "";
+                input.focus();
+            }
+
+            //Traz o conteúdo da tag button (HTML) para dentro da var button (JS)
+            var button = document.querySelector("button");
+
+            button.onclick = verifica;
+
+        </script>
+
+</body>
