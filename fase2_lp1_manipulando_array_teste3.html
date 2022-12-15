@@ -1,0 +1,71 @@
+<meta charset="UTF-8">
+
+<body>
+
+    <h2>Fase 2 - Javascript e HTML - Lógica de programação 1 - Trabalhe com muitos dados - Manipulando array - Teste 3</h2>
+
+        <input/>
+        <button>Adivinhe o número! Dica: Entre 0 e 10!</button>
+
+        <script>
+
+            //Sorteia, aleatoriamente, 1 número ente 0 e 10.
+            function sorteia(){
+                return Math.round(Math.random() * 10);
+            }
+
+            //Sorteia a quantidade de números passada pela chamada da função abaixo.
+            function sorteiaNumeros(quantidade) {
+
+                //A variável segredos, criada dentro dentro desta função, não tem a ver com a variável segredos existente fora desta função. O nome não importa, *desde que não haja return para captura do resultado fora desta função*.
+                //Ao ser chamada, a função sorteiaNumeros declara uma lista vazia (segredos).
+                var segredos = [];
+
+                //Contador para verificação da quantidade máxima de números a serem gerados, de acordo como passado pela chamada abaixo.
+                var n = 1;
+
+                while(n <= quantidade) {
+                    segredos.push(sorteia());
+                    n++;
+                }
+
+                //Retorna um array de x números para a variável segredos abaixo, que chamou esta função.
+                return segredos;
+            }
+
+            //Chama a função sorteiaNumeros, passando quantos números devem ser sorteados, e guardando o retorno na variável segredos.
+            var segredos = sorteiaNumeros(3);
+
+            console.log(segredos);
+
+            var input = document.querySelector("input");
+            input.focus();
+
+            function verifica() {
+
+                var achou = false;
+
+                for(var posicao = 0; posicao < segredos.length; posicao++) { 
+
+                    if(input.value == segredos[posicao]) {
+                        alert("Você acertou!");
+                        achou = true;
+                        break;
+                    }
+                }
+
+                if(achou == false) {
+                    alert("Você errou!");
+                }
+                
+                input.value = "";
+                input.focus();
+            }
+
+            var button = document.querySelector("button");
+
+            button.onclick = verifica;
+
+        </script>
+
+</body>
