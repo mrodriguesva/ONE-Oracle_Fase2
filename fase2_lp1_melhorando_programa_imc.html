@@ -16,7 +16,8 @@
             }
 
             function calculaImc(altura, peso) {
-
+                altura = altura.replace(',' , '.');
+                peso = peso.replace(',' , '.');
                 return peso / (altura * altura);
             }
 
